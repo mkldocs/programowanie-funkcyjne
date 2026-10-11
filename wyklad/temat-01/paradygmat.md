@@ -34,7 +34,7 @@
 
 * Wykonanie programu polega na obliczeniu wartości wyrażenia. Wyrażenie jest wywołaniem funkcji (czystej funkcji) z argumentami. Operatory (np. arytmetyczne) też są funkcjami tylko mają inną składnię. W programie nie ma instrukcji.
 
-* Brak zmiany stanu (brak instrukcji podstawienia)
+* Brak zmiany stanu (brak instrukcji podstawienia).
 
     Konsekwencją braku zmiany stanu jest m\.in. brak pętli jako konstrukcji programistycznej. Pętla nie ma sensu, bo bez zmiany stanu wartość warunku nigdy się nie zmieni.
 
