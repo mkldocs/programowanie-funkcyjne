@@ -1,0 +1,36 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 38622427-6ae9-4a90-97aa-231a026c058d
+  # title:
+  # description:
+  # keywords: []
+  # authors: []
+  # github: https://github.com/mkldocs/programowanie-funkcyjne
+  # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+  toc:
+    - file: index.md
+    - title: Wykłady
+      children:
+        - file: wyklad/temat-01/paradygmat.md
+          title: Paradygmat programowania funkcyjnego
+          children:
+            - file: wyklad/temat-01/podsumowanie.md
+        - file: wyklad/temat-02/rekurencja.md
+          title: Algorytmy iteracyjne i rekurencja
+          children:
+            - file: wyklad/temat-02/podsumowanie.md
+    - title: Przed laboratoriami
+      children:
+        - file: przygotowanie/01/haskell.md
+    - title: Zadania
+      children:
+        - file: zadania/zestaw-01/zestaw-01.md
+  # static_files:
+  #   - zadania/zestaw-02/zestaw-02
+site:
+  template: book-theme
+  options:
+    logo_text: Programowanie funkcyjne
+  #   favicon: favicon.ico
+  #   logo: site_logo.png
