@@ -19,6 +19,8 @@ project:
         - file: wyklad/temat-02/rekurencja.md
           title: Algorytmy iteracyjne i rekurencja
           children:
+            - file: wyklad/temat-02/przyklady.md
+              title: Dodatkowe przykłady użycia rekurencji ogonowej
             - file: wyklad/temat-02/podsumowanie.md
     - title: Przed laboratoriami
       children:
