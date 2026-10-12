@@ -1,0 +1,1 @@
+# Funkcje wyższych rzędów

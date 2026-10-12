@@ -1,10 +1,10 @@
 # Zadania wprowadzające do programowania funkcyjnego w Haskellu
 
-Tematy: definiowanie funkcji, podstawowy system typów Haskella, wyrażenia arytmetyczne, selekcja, prostego dopasowanie wzorców, operacje na podstawowych typach
+**Tematy:** definiowanie funkcji, podstawowy system typów Haskella, wyrażenia arytmetyczne, selekcja, proste dopasowanie wzorców, operacje na podstawowych typach
 
 ---
 
-(zadanie-01)=
+(arithm-expr)=
 ## Zadanie 1. Wyrażenia arytmetyczne
 
 Napisz funkcje `expr1`, `expr2`, ..., `expr8`, obliczające wartości poniższych wyrażeń. W zależności od wyrażenia funkcja może mieć jeden, dwa, trzy lub cztery parametry.
@@ -39,7 +39,7 @@ Zwróć uwagę na różnicę między tymi funkcjami oraz na sposób, w jaki syst
 
 ---
 
-(zadanie-02)=
+(integers-info)=
 ## Zadanie 2. Operacje na liczbach całkowitych
 
 Napisz funkcje operujące na nieujemnych liczbach całkowitych:
@@ -70,7 +70,7 @@ ghci> tensDigit 7
 
 ---
 
-(zadanie-03)=
+(number-conversion)=
 ## Zadanie 3. Konwersje między typami liczbowymi
 
 Napisz następujące funkcje.
@@ -141,7 +141,7 @@ ma typ pozwalający na obliczenie wyniku typu `Double`.
 
 ---
 
-(zadanie-04)=
+(week-days)=
 ## Zadanie 4. Operacje na dniach tygodnia
 
 Zdefiniuj funkcje operujące na dniach tygodnia reprezentowanych za pomocą liczb.
@@ -192,9 +192,7 @@ ghci> previousDay1 4
 
 ---
 
----
-
-(zadanie-05)=
+(time-conversion)=
 ## Zadanie 5. Konwersje czasu
 
 Napisz funkcję konwertującą czas podany w godzinach, minutach i sekundach na całkowitą liczbę sekund:
@@ -281,7 +279,7 @@ Pamiętaj, że:
 
 ---
 
-(zadanie-07)=
+(temperature)=
 ## Zadanie 7. Temperatury
 
 Temperatura może być podana między innymi w stopniach Celsjusza lub Fahrenheita. Przelicznik jest następujący:
@@ -325,7 +323,7 @@ ghci> celsius 99.5
 
 ---
 
-(zadanie-08)=
+(simple-math)=
 ## Zadanie 8. Prosta matematyka 
 
 1. Napisz funkcję:
@@ -352,7 +350,7 @@ W tym zadaniu spróbuj użyć mechanizmu strażników.
 
 ---
 
-(zadanie-09)=
+(simple-tuples)=
 ## Zadanie 9. Krotki
 
 ### 1. Elementy krotki
@@ -421,7 +419,7 @@ i spróbuj podać jej najbardziej ogólną sygnaturę.
 
 ---
 
-(zadanie-10)=
+(chars)=
 ## Zadanie 10. Znaki
 
 ### 1. Samogłoski
@@ -452,7 +450,7 @@ Załóż, że oba napisy wejściowe są niepuste.
 
 ---
 
-(zadanie-11)=
+(euclidean-points)=
 ## Zadanie 11. Punkty w przestrzeni
 
 Punkt 2D reprezentuj jako krotkę `(Double, Double)`. Zdefiniuj funkcje:
@@ -513,7 +511,7 @@ ghci> centroid3D (0.0, 0.0, 0.0) (3.0, 0.0, 0.0) (0.0, 3.0, 0.0)
 
 ---
 
-(zadanie-13)=
+(date-validation)=
 ## Zadanie 13. Poprawność daty
 
 Datę reprezentuj jako krotkę `(rok, miesiąc, dzień)`.
@@ -573,10 +571,10 @@ True
 
 ---
 
-(zadanie-14)=
+(day-change)=
 ## Zadanie 14. Następny i poprzedni dzień
 
-Wykorzystując definicje z poprzedniego zadania, napisz funkcje:
+Wykorzystując definicje z {ref}`zadania z walidacją dat <date-validation>`, napisz funkcje:
 
 ```haskell
 nextDate :: (Int, Int, Int) -> (Int, Int, Int)
@@ -611,7 +609,7 @@ Możesz założyć, że argument jest poprawną datą.
 
 ---
 
-(zadanie-15)=
+(season)=
 ## Zadanie 15. Pora roku
 
 Napisz funkcję:
@@ -658,7 +656,7 @@ ghci> season (2024, 1, 15)
 
 ---
 
-(zadanie-16)=
+(holiday-names)=
 ## Zadanie 16. Nazwy świąt
 
 Napisz funkcję:
@@ -686,7 +684,7 @@ Nie uwzględniaj świąt ruchomych.
 
 ---
 
-(zadanie-17)=
+(easter)=
 ## Zadanie 17. Wielkanoc
 
 Napisz funkcję:
@@ -717,7 +715,7 @@ ghci> easter 2026
 ```
 ---
 
-(zadanie-18)=
+(declination)=
 ## Zadanie 18. Odmiana nazw
 
 Napisz funkcję, która dla zadanej liczby zwraca odpowiednią formę słowa `"złoty"`: `"złoty"`, `"złote"` albo `"złotych"`.
@@ -753,7 +751,7 @@ Przykładowo:
 
 ---
 
-(zadanie-19)=
+(hour-to-text)=
 ## Zadanie 19. Godzina zapisana słownie
 
 Zaimplementuj funkcję:

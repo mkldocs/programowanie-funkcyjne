@@ -22,12 +22,21 @@ project:
             - file: wyklad/temat-02/przyklady.md
               title: Dodatkowe przykłady użycia rekurencji ogonowej
             - file: wyklad/temat-02/podsumowanie.md
+        - file: wyklad/temat-03/listy.md
+          title: Listy
+          children:
+            - file: wyklad/temat-03/podsumowanie.md
+        - file: wyklad/temat-04/funkcje-wyzszych-rzedow.md
+          title: Funkcje wyższych rzędów
+          children:
+            - file: wyklad/temat-04/podsumowanie.md
     - title: Przed laboratoriami
       children:
         - file: przygotowanie/01/haskell.md
     - title: Zadania
       children:
         - file: zadania/zestaw-01/zestaw-01.md
+        - file: zadania/zestaw-02/zestaw-02.md
   # static_files:
   #   - zadania/zestaw-02/zestaw-02
 site:
