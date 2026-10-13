@@ -31,7 +31,6 @@ Lista w językach funkcyjnych jest zdefiniowana rekurencyjnie.
 Mamy dwa przypadki.
 - Lista może być pusta. 
 
-    **Składnia:** Pustą listę zapisujemy jako `[]`.
 - Lista może być parą złożoną z:
     - Pierwszego elementu listy nazywanego **głową** (ang. *head*).
     - Reszty listy nazywanej **ogonem** (ang. *tail*). Ogon listy jest listą.
@@ -41,7 +40,8 @@ Mamy dwa przypadki.
 
 #### Składnia:
 
-Listę złożoną z głowy `h` i ogona `t` zapisujemy jako `h:t`.
+- Pustą listę zapisujemy jako `[]`.
+- Listę złożoną z głowy `h` i ogona `t` zapisujemy jako `h:t`.
 
 Zatem np. listę złożoną z elementów `1`, `2`, `3` i `4` możemy zapisać jako
 ```haskell
@@ -141,34 +141,48 @@ tail (_:t) = t
 
 #### Przykład użycia wzorców:
 
-Wyciągnięcie z listy pierwszych trzech elementów za pomocą wzorca: 
+Chcemy wyciągnąć pierwsze trzy elementy z dowolnej listy, która ma co najmniej trzy elementy, za pomocą odpowiedniego wzorca.
 - Dlaczego `f [x1,x2,x3] = ...` się tu nie sprawdzi?
+
+    Ten wzorzec oznacza to samo co `f (x1:x2:x3:[]) = ...` czyli listę **dokładnie** trójelementową a nie co najmniej trójelementową.
 - Czy `f (x1:x2:x3:t) = ...` zadziała dla list, które mają dokładnie trzy elementy? Jeżeli tak, to do czego dopasuje się wtedy `t`?
+
+    Wywołanie `f [1,2,3]` oznacza to samo co `f (1:2:3:[])`, czyli `t` dopasuje się do listy pustej.
 
 ### Operacje na listach
 
-Przykładowe funkcje z Prelude operujące na listach:
-- `length` &mdash; długość listy,
-- operator `++` &mdash; konkatenacja (połączenie) list,
-- operator `!!` &mdash; operator indeksowania,
+Poniżej przedstawione są przykłady podstawowych operacji na listach z przykładowymi sposobami implementacji:
 
-### Przykłady implementacji
+- obliczenie długości listy (`length` z `Prelude`),
+- element o zadanym indeksie (operator `!!` z `Prelude`),
+- dodanie elementu na początek listy,
+- dodanie elementu na koniec listy,
+- konkatenacja (połączenie) dwóch list (operator `++` z `Prelude`),
+- odwrócenie listy (funkcja `reverse` z `Prelude`).
 
-```haskell
-length :: ...
-...
-```
 
-### Współdzielenie pamięci w listach
+### Operacje na listach a implementacja efektywnych struktur danych
 
-Przykład operacji:
-- wstawienie elementu na początek listy (łatwe wsóldzielenie),
-- wstawienie elementu na koniec listy (brak możliwości współdzielenia).
+Przykłady operacji modyfikujących listę (oczywiście operacje nie mogą niczego naprawdę zmodyfikować &mdash; zwracają nową listę):
+- wstawienie elementu na początek listy: brak potrzeby kopiowania danych, czas stały,
+- usunięcie elementu z początku listy: brak potrzeby kopiowania danych, czas stały,
+- wstawienie elementu na koniec listy: konieczność skopiowania całej listy, czas liniowy,
+- usunięcie elementu z końca listy: konieczność skopiowania całej listy, czas liniowy.
 
-Jako przykład weźmy podstawowe struktury danych takie jak **stos** (ang. *stack*, *LIFO* &mdash; *last in, first out*) i **kolejka** (ang. *queue*, *FIFO* &mdash; *first in, first out*). Obie te struktury są często implementowane w językach imperatywnych jako **lista wiązana** (ang. *linked list)*. Stos można efektywnie zaimplementować jako za pomocą **listy wiązanej jednokierunkowej** (ang. *singly linked list)*. Do kolejki używa się zwykle **listy wiązanej dwukierunkowej** (ang. *doubly linked list*).
+Jako przykład weźmy podstawowe abstrakcyjne struktury danych takie jak **stos** (ang. *stack*, *LIFO* &mdash; *last in, first out*) i **kolejka** (ang. *queue*, *FIFO* &mdash; *first in, first out*) i zastanówmy się nad ich implementacją. Obie te struktury są często implementowane w językach imperatywnych jako **lista wiązana** (ang. *linked list)*. 
 
-Jak mają się te struktury danych do list w językach funkcyjnych i co to oznacza dla kwestii implementacji funkcyjnego stosu i kolejki.
+Jak mają się te struktury danych do list w językach funkcyjnych i co to oznacza dla kwestii implementacji funkcyjnego stosu i kolejki?
 
+Stos można efektywnie zaimplementować jako za pomocą **listy wiązanej jednokierunkowej** (ang. *singly linked list)* z operacjami wyłącznie na początku listy. Przekłada się to bezpośrednio na podstawowe operacje na liście:
+- Wierzchołek stosu to głowa listy.
+- Stos po zdjęciu elementu z wierzchołka to ogon listy.
+- Odłożenie elementu na stos oznacza skonstruowanie listy, w której głową jest ten element, a ogonem lista reprezentująca resztę stosu (stos przed dodaniem elementu).
+
+Do implementacji kolejki używa się zwykle **listy wiązanej dwukierunkowej** (ang. *doubly linked list*) i operacji na obu końcach listy.
+- Jeżeli użyjemy listy jednokierunkowej, to złożoność operacji na jednym z końców będzie liniowa a nie stała.
+- Nie da się skonstruować struktury takiej jak lista dwukierunkowa bez zmiany stanu (instrukcji podstawienia).
+
+Efektywna funkcyjna implementacja kolejki wymaga nieco więcej sprytu, wymaga dwóch list i operacje na niej mają **amortyzowaną** złożoność stałą.
 
 ### Listy wielowymiarowe
 

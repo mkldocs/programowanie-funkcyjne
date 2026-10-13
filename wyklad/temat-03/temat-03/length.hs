@@ -18,7 +18,11 @@ length :: [a] -> Int
 length lst = length_hlp lst 0
 
 length_hlp [] acc = acc
-length_hlp (_:t) acc = length_hlp t (acc + 1)
+length_hlp (_:t) acc = 
+    let
+        acc1 = acc + 1
+    in
+        seq acc1 $ length_hlp t acc1
 
 -- length [1,2,3]
 -- length_hlp [1,2,3] 0
