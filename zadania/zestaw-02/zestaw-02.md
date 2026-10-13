@@ -25,7 +25,6 @@ Napisz funkcję w Haskellu symulującą wzrost kapitału z regularnymi wpłatami
 
 ```haskell
 calculateCapital :: Double -> Double -> Double -> Int -> Bool -> Double
-
 ```
 
 Parametry:

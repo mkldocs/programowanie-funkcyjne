@@ -357,7 +357,7 @@ W tym zadaniu spróbuj użyć mechanizmu strażników.
 
 Dla krotki trójelementowej zdefiniuj funkcje `first`, `second`, `third`, `sum3`.
 
-    Pierwsze trzy funkcje powinny zwracać odpowiednio pierwszy, drugi i trzeci element krotki, a `sum3` — sumę jej elementów.
+Pierwsze trzy funkcje powinny zwracać odpowiednio pierwszy, drugi i trzeci element krotki, a `sum3` — sumę jej elementów.
 
 ### 2. Pierwszy element różny od zera
 
