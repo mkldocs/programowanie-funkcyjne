@@ -30,6 +30,8 @@ project:
           title: Funkcje wyższych rzędów
           children:
             - file: wyklad/temat-04/podsumowanie.md
+        - file: wyklad/temat-05/leniwa-ewaluacja.md
+          title: Leniwa ewaluacja
     - title: Przed laboratoriami
       children:
         - file: przygotowanie/01/haskell.md
