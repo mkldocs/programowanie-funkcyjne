@@ -12,16 +12,14 @@ project:
     - file: index.md
     - title: Wykłady
       children:
-        - file: wyklad/temat-01/paradygmat.md
-          title: Paradygmat programowania funkcyjnego
-          children:
-            - file: wyklad/temat-01/podsumowanie.md
-        - file: wyklad/temat-02/rekurencja.md
-          title: Algorytmy iteracyjne i rekurencja
+        # - file: wyklad/temat-01/paradygmat.md
+        #   title: Paradygmat programowania funkcyjnego
+        # - file: wyklad/temat-02/rekurencja.md
+        - title: Algorytmy iteracyjne i rekurencja
           children:
             - file: wyklad/temat-02/przyklady.md
               title: Dodatkowe przykłady użycia rekurencji ogonowej
-            - file: wyklad/temat-02/podsumowanie.md
+            # - file: wyklad/temat-02/podsumowanie.md
         - file: wyklad/temat-03/listy.md
           title: Listy
           children:
