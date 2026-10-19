@@ -17,8 +17,8 @@ project:
         # - file: wyklad/temat-02/rekurencja.md
         - title: Algorytmy iteracyjne i rekurencja
           children:
-            - file: wyklad/temat-02/przyklady.md
-              title: Dodatkowe przykłady użycia rekurencji ogonowej
+            # - file: wyklad/temat-02/przyklady.md
+            #   title: Dodatkowe przykłady użycia rekurencji ogonowej
             # - file: wyklad/temat-02/podsumowanie.md
         - file: wyklad/temat-03/listy.md
           title: Listy
@@ -37,19 +37,18 @@ project:
       children:
         # - file: zadania/zestaw-01/zestaw-01.md
         # - file: zadania/zestaw-02/zestaw-02.md
-        - file: zadania/zestaw-02/zestaw-02b.md
-        - file: zadania/zestaw-03/zestaw-03.md
-        - title: Listy
-          children:
-            - file: zadania/zestaw-03/zestaw-03a.md
-            - file: zadania/zestaw-03/zestaw-03b.md
-              children:
-                - file: zadania/zestaw-03/pesel.md
-            - file: zadania/zestaw-03/zestaw-03c.md
-        - title: Funkcje wyższych rzędów
-          children:
-            - file: zadania/zestaw-04/zestaw-04a.md
-            - file: zadania/zestaw-04/zestaw-04b.md
+        # - file: zadania/zestaw-02/zestaw-02b.md
+        # - title: Listy
+        #   children:
+        #     - file: zadania/zestaw-03/zestaw-03a.md
+        #     - file: zadania/zestaw-03/zestaw-03b.md
+        #       children:
+        #         - file: zadania/zestaw-03/pesel.md
+        #     - file: zadania/zestaw-03/zestaw-03c.md
+        # - title: Funkcje wyższych rzędów
+        #   children:
+        #     - file: zadania/zestaw-04/zestaw-04a.md
+        #     - file: zadania/zestaw-04/zestaw-04b.md
   # static_files:
   #   - zadania/zestaw-02/zestaw-02
 site:
