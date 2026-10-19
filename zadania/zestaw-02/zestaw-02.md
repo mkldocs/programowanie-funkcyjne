@@ -1,6 +1,6 @@
 # Rekurencja i rekurencja ogonowa
 
-Tematy: rekurencja, rekurencja ogonowa
+**Tematy**: rekurencja, rekurencja ogonowa
 
 ---
 
@@ -146,19 +146,34 @@ Napisz funkcję o sygnaturze
 ```haskell
 expApprox :: Int -> Double -> Double
 ```
-obliczającą przybliżenie $e^x$ jako $n$-ty wyraz szeregu:
+Wywołanie 
+```haskell
+expApprox n x
+```
+obicza przybliżenie $e^x$ jako wartość szeregu $S_n(x)$, gdzie:
 
-$$1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots$$
+$$S_n(x) = \sum_{k=0}^n \frac{x^k}{k!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots + \frac{x^n}{n!}$$
 
 ### Uwaga
 
-Sumę $n$ pierwszych wyrazów szeregu da się wyznaczyć mając wyłącznie sumę $n-1$ pierwszych wyrazów oraz wartości $x$ i $n$. Wystarczy policzyć wartość $\frac{x^n}{n!}$ i dodać do tej sumy. Niestety będzie to wymagało obliczenia od nowa wartości $x^n$ oraz $n!$ bez wykorzystania tego, że wcześniej liczona już była wartość $x^{n-1}$ oraz $(n-1)!$. To nie jest najlepsze rozwiązanie. Zamiast tego skorzystaj z poniższych wskazówek:
+Sumę $S_n(x)$ da się wyznaczyć mając wyłącznie sumę $S_{n-1}(x)$ oraz wartości $x$ i $n$. Wystarczy obliczyć $S_{n-1}(x) + \frac{x^n}{n!}$. Niestety będzie to wymagało obliczenia od nowa wartości $x^n$ oraz $n!$ bez wykorzystania tego, że wcześniej liczona już była wartość $x^{n-1}$ oraz $(n-1)!$. To nie jest najlepsze rozwiązanie.
 
-### Wskazówki
+### Wskazówka
+* Wykorzystaj fakt, że między kolejnymi wyrazami ciągu $$a_n(x) = \frac{x^n}{n!}$$ zachodzi zależność $$a_n(x) = a_{n-1}(x) \cdot \frac{x}{n}$$
+i zorganizuj obliczenia tak, żeby obliczając $S_n(x)$ mieć dostęp do wartości $a_{n-1}(x)$.
 
-* Napisz funkcję, która dla wyrazu ciągu nr $n-1$ oraz wartości $x$ i $n$ obliczy $n$-ty wyraz ciągu.
-* Napisz funkcję, która działa tak jak `expApprox`, ale zwraca krotkę `(s, el)`, gdzie `s` jest szukaną sumą, a `el` jest ostatnim elementem ciągu (ostatnim składnikiem sumy).
-* Użyj ostatniej funkcji do implementacji funkcji `expApprox`.
+### Funkcje sin i cos
+
+Funkcje sinus i cosinus można podobnie rozwinąć do szeregów:
+
+- $$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots = \sum_{n=0}^{\infty} \frac{(-1)^nx^{2n+1}}{(2n+1)!}$$
+- $$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dots = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!}$$
+
+Napisz odpowiednie funkcje o sygnaturach
+```haskell
+sinApprox :: Int -> Double -> Double
+cosApprox :: Int -> Double -> Double
+```
 
 ---
 

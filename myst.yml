@@ -31,12 +31,25 @@ project:
         - file: wyklad/temat-05/leniwa-ewaluacja.md
           title: Leniwa ewaluacja
     - title: Przed laboratoriami
-      children:
-        - file: przygotowanie/01/haskell.md
+      children: []
+      #  - file: przygotowanie/01/haskell.md
     - title: Zadania
       children:
-        - file: zadania/zestaw-01/zestaw-01.md
-        - file: zadania/zestaw-02/zestaw-02.md
+        # - file: zadania/zestaw-01/zestaw-01.md
+        # - file: zadania/zestaw-02/zestaw-02.md
+        - file: zadania/zestaw-02/zestaw-02b.md
+        - file: zadania/zestaw-03/zestaw-03.md
+        - title: Listy
+          children:
+            - file: zadania/zestaw-03/zestaw-03a.md
+            - file: zadania/zestaw-03/zestaw-03b.md
+              children:
+                - file: zadania/zestaw-03/pesel.md
+            - file: zadania/zestaw-03/zestaw-03c.md
+        - title: Funkcje wyższych rzędów
+          children:
+            - file: zadania/zestaw-04/zestaw-04a.md
+            - file: zadania/zestaw-04/zestaw-04b.md
   # static_files:
   #   - zadania/zestaw-02/zestaw-02
 site:
