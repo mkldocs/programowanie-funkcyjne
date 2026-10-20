@@ -151,10 +151,49 @@ Chcemy wyciągnąć pierwsze trzy elementy z dowolnej listy, która ma co najmni
 
 ### Operacje na listach
 
-Poniżej przedstawione są przykłady podstawowych operacji na listach z przykładowymi sposobami implementacji:
+Poniżej przedstawione są przykłady podstawowych operacji na listach z przykładowymi sposobami implementacji.
 
-- obliczenie długości listy (`length` z `Prelude`),
-- element o zadanym indeksie (operator `!!` z `Prelude`),
+**Długość listy**
+
+W module `Prelude` jest to funkcja `length`.
+
+1. Argumentem jest dowolna lista. Wartości oznaczające rozmiary czy indeksy są zwykle w Haskellu reprezentowane typem `Int`, bo jego zakres w zupełności do tego wystarczy.
+    ```haskell
+    length :: [a] -> Int
+    ```
+
+2. Długość listy pustej wynosi 0.
+    ```haskell
+    length [] = 0
+    ```
+3. Długość listy niepustej jest o jeden większa niż długość jej ogona.
+    ```haskell
+    length (_:t) = 1 + length t
+    ```
+
+    Razem:
+    ```{literalinclude} temat-03/length.hs
+    :lang:haskell
+    ```
+
+**Element listy o zadanym indeksie**
+
+W module `Prelude` jest to operator `!!`.
+
+1. Pierwszym argumentem jest dowolna lista, a drugim &mdash; indeks. Wynikiem jest element listy.
+    ```haskell
+    (!!) :: [a] -> Int -> a
+    ```
+2. Element można wziąć tylko z listy niepustej. Jeżeli indeks wynosi zero, to wynikiem jest głowa listy.
+    ```haskell
+    (h:_) !! 0 = h
+    ```
+3. Element listy o indeksie $n$, to element ogona tej listy o indeksie $n-1$.
+    ```haskell
+    (_:t) !! n = t !! (n - 1)
+    ```
+
+
 - dodanie elementu na początek listy,
 - dodanie elementu na koniec listy,
 - konkatenacja (połączenie) dwóch list (operator `++` z `Prelude`),
@@ -173,7 +212,7 @@ Jako przykład weźmy podstawowe abstrakcyjne struktury danych takie jak **stos*
 
 Jak mają się te struktury danych do list w językach funkcyjnych i co to oznacza dla kwestii implementacji funkcyjnego stosu i kolejki?
 
-Stos można efektywnie zaimplementować jako za pomocą **listy wiązanej jednokierunkowej** (ang. *singly linked list)* z operacjami wyłącznie na początku listy. Przekłada się to bezpośrednio na podstawowe operacje na liście:
+Stos można efektywnie zaimplementować za pomocą **listy wiązanej jednokierunkowej** (ang. *singly linked list)* z operacjami wyłącznie na początku listy. Przekłada się to bezpośrednio na podstawowe operacje na liście:
 - Wierzchołek stosu to głowa listy.
 - Stos po zdjęciu elementu z wierzchołka to ogon listy.
 - Odłożenie elementu na stos oznacza skonstruowanie listy, w której głową jest ten element, a ogonem lista reprezentująca resztę stosu (stos przed dodaniem elementu).
