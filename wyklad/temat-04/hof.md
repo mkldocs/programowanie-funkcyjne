@@ -29,7 +29,6 @@
         Czasem w wyrażeniu możliwych jest wiele &#946;-redukcji (temat ten będzie jeszcze poruszony przy okazji omawiania *leniwej ewaluacji*). Np. dla
 
 
-
 - Częściowa ewaluacja, currying
 
 - operatory jako funkcje dwuargumentowe, sekcje
