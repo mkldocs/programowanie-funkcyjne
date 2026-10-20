@@ -1,6 +1,6 @@
 # Leniwa ewaluacja
 
-TODO:
+<!-- TODO:
 - leniwa ewaluacja, ścisła ewaluacja
 - przypomnienie o strukturach danych i cyklach
     - można jednak zrobić cykl dzięki leniwej ewaluacji
@@ -27,6 +27,9 @@ TODO:
 
 - leniwa ewaluacja a akumulatory w rekurencji ogonowej
     - ponowna wizualizacja, ale z rzeczywistą kolejnością obliczeń w przypadku leniwej ewaluacji (jawne rozwijanie akumulatora do wyrażenia arytmetycznego i zwijanie go dopiero na końcu)
+ -->
+
+- leniwa ewaluacja a akumulatory w rekurencji ogonowej
 
     ```{literalinclude} ../temat-02/temat-02/factorial_tr.hs
     :lang:haskell
@@ -66,8 +69,6 @@ TODO:
     24
     ```
 
-    Rekurencja ogonowa połączona z leniwą ewaluacją akumulatora jest wręcz uważana za **antywzorzec** (ang. **anti-pattern**).
-
     Powyższy przykład motywuje konieczność używania czasem w Haskellu mechanizmów wymuszających gorliwą ewaluację. Główną zaletą rekurencji ogonowej jest to, że nie odkłada ona informacji o kolejnych wywołaniach na stosie. Jednak w przypadku leniwej ewaluacji, problem ten zostaje jedynie **przeniesiony ze stosu na stertę**. Zamiast głębokiego stosu wywołań, budujemy gigantyczną, zagnieżdżoną strukturę thunka zajmującą pamięć. 
 
     Co gorsza, do ewaluacji wyrażenia przechowywanego w thunku i tak musi zostać użyty stos. Oznacza to, że problemu ze stosem tak naprawdę też nie zlikwidowaliśmy, a jedynie odroczyliśmy go w czasie.
@@ -76,4 +77,4 @@ TODO:
 
     **Uwaga:** Jeszcze precyzyjniejsze byłoby uwzględnienie w wizualizacji tego, że wyrażenie `i + 1` przekazane jako drugi argument wywołania `factorial_hlp` też nie jest obliczane przed wywołaniem funkcji. Ale sprawdzenie warunku `i < n` na samym początku funkcji wymusza jego natychmiastową ewaluację, więc nie jest to uproszczenie znacząco zmieniające sytuację. Za to wartość wyrażenia w akumulatorze (parametrze `result`) do końca nie jest nigdzie potrzebna.
 
-    - `foldl'` &mdash; `foldl` z gorliwą ewaluacją akumulatora. Praktycznie zawsze jego użycie jest sensowniejsze niż `foldl`. Kiedyś funkcji `foldl'` nie było w `Prelude` i trzeba było ją importować z `Data.List`. Teraz już jest.
+    <!-- - `foldl'` &mdash; `foldl` z gorliwą ewaluacją akumulatora. Praktycznie zawsze jego użycie jest sensowniejsze niż `foldl`. Kiedyś funkcji `foldl'` nie było w `Prelude` i trzeba było ją importować z `Data.List`. Teraz już jest. -->
